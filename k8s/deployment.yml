@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata :
+  name: k8-service-dealership
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8-service-dealership
+  template:
+    metadata:
+      labels:
+        app: k8-service-dealership
+    spec:
+      containers:
+        - name: service-dealership
+          image: service-dealership:latest
+          imagePullPolicy: Never
