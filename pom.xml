@@ -11,11 +11,43 @@
 	<groupId>com.cars</groupId>
 	<artifactId>dealership</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dealership</name>
+	<packaging>pom</packaging>
 	<description>Dealership project</description>
+
+	<name>dealership</name>
+	<modules>
+		<module>order</module>
+	</modules>
+
 	<properties>
 		<java.version>11</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.boot.maven.plugin.version>2.5.7</spring.boot.maven.plugin.version>
+		<spring.boot.dependencies.version>2.5.7</spring.boot.dependencies.version>
+		<spring.cloud-version>2020.0.3</spring.cloud-version>
 	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.dependencies.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
 
 	<dependencies>
 		<dependency>
@@ -24,10 +56,16 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
