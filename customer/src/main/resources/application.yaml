@@ -4,3 +4,23 @@ server:
 spring:
   application:
     name: customer
+  datasource:
+    platform: postgresql
+    initialize: true
+    schema: dealershipdb
+    username: postgres
+    password: 1234
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.databaseName}
+    host: 172.17.0.2
+    port: 5432
+    databaseName: dealershipdb
+    jpa:
+      generate-ddl:
+      hibernate:
+        ddl-auto: create-drop
+      properties:
+        hibernate:
+          hbm2ddl: create
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+        show-sql: true
