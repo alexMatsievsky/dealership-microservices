@@ -5,9 +5,10 @@ spring:
   application:
     name: customer
   datasource:
+    initialization-mode: always
     platform: postgresql
     initialize: true
-    schema: dealershipdb
+#    schema: dealershipdb
     username: postgres
     password: 1234
     url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.databaseName}
