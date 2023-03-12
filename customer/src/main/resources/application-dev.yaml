@@ -3,13 +3,13 @@ server:
 
 spring:
   application:
+    name: customer
 
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-    name: customer
     hibernate:
       ddl-auto: create
     show-sql: true
