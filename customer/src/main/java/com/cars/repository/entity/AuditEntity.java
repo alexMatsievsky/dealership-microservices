@@ -15,11 +15,11 @@ import java.util.Date;
 @JsonIgnoreProperties(value = {"created_at, updateAt"}, allowGetters = true)
 public class AuditEntity{
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     private Date createAt;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "updateAt", nullable = false)
     @LastModifiedDate
     private Date updateAt;
