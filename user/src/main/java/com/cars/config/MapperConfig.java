@@ -1,7 +1,7 @@
 package com.cars.config;
 
-import com.cars.mapper.CustomerMapper;
-import com.cars.mapper.CustomerMapperImpl;
+import com.cars.mapper.UserMapper;
+import com.cars.mapper.UserMapperImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 public class MapperConfig {
 
     @Bean
-    public CustomerMapper customerMapper(){
-     return new CustomerMapperImpl();
+    public UserMapper customerMapper(){
+     return new UserMapperImpl();
     }
 
 }

@@ -1,14 +1,11 @@
 package com.cars.repository;
 
-import com.cars.repository.entity.CustomerEntity;
+import com.cars.repository.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.Optional;
 import java.util.UUID;
 
-public interface CustomerRepository extends JpaRepository<CustomerEntity, UUID> {
+public interface UserRepository extends JpaRepository<UserEntity, UUID> {
 //    @Modifying
 //    void insertMyEntity(@Param("name") String name, @Param("age") int age);
 //    @Query("INSERT INTO MyEntity (name, age) VALUES (:name, :age)")
