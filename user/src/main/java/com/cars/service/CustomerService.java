@@ -1,17 +1,16 @@
 package com.cars.service;
 
-import com.cars.controller.CustomerRegistrationRequest;
-import com.cars.dto.CustomerDTO;
+import com.cars.controller.UserRegistrationRequest;
+import com.cars.dto.UserDTO;
 import com.cars.exception.ConflictException;
-import com.cars.mapper.CustomerMapper;
-import com.cars.repository.CustomerRepository;
-import com.cars.repository.entity.CustomerEntity;
+import com.cars.mapper.UserMapper;
+import com.cars.repository.UserRepository;
+import com.cars.repository.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,14 +20,14 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CustomerService {
 
-    private final CustomerRepository customerRepository;
+    private final UserRepository userRepository;
 
-    private final CustomerMapper customerMapper;
+    private final UserMapper customerMapper;
 
-    public CustomerDTO createCustomer(CustomerRegistrationRequest request) {
+    public UserDTO createCustomer(UserRegistrationRequest request) {
 
-        CustomerEntity customerEntity =
-                CustomerEntity.builder()
+        UserEntity userEntity =
+                UserEntity.builder()
                         .firstName(request.getFirstName())
                         .lastName(request.getLastName())
                         .email(request.getEmail())
@@ -36,9 +35,9 @@ public class CustomerService {
                         .build();
 
 
-        CustomerEntity savedCustomer = null;
+        UserEntity savedCustomer = null;
         try {
-            savedCustomer = customerRepository.save(customerEntity);
+            savedCustomer = userRepository.save(userEntity);
         } catch (DataIntegrityViolationException exception){
             throw new ConflictException(String.format(
                                 "can't persist customer with email [%s]", request.getEmail()));
@@ -47,10 +46,10 @@ public class CustomerService {
 
     }
 
-    public ResponseEntity<List<CustomerDTO>> listCustomer() {
+    public ResponseEntity<List<UserDTO>> listCustomer() {
 
 
-        List<CustomerDTO> fgfdg = Optional.of(customerRepository.findAll()
+        List<UserDTO> fgfdg = Optional.of(userRepository.findAll()
                         .stream()
                         .map(customerMapper::modelToDto)
                         .collect(Collectors.toList()))

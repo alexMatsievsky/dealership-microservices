@@ -1,6 +1,6 @@
 package com.cars.controller;
 
-import com.cars.dto.CustomerDTO;
+import com.cars.dto.UserDTO;
 import com.cars.service.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,17 +13,17 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/customer")
 @AllArgsConstructor
-public class CustomerController {
+public class UserController {
 
     public final CustomerService customerService;
 
     @PostMapping("/create")
-    public CustomerDTO createCustomer (@RequestBody CustomerRegistrationRequest customerRegistrationRequest){
-        return customerService.createCustomer(customerRegistrationRequest);
+    public UserDTO createCustomer (@RequestBody UserRegistrationRequest userRegistrationRequest){
+        return customerService.createCustomer(userRegistrationRequest);
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<CustomerDTO>> getListCustomer (){
+    public ResponseEntity<List<UserDTO>> getListCustomer (){
         return customerService.listCustomer();
     }
 

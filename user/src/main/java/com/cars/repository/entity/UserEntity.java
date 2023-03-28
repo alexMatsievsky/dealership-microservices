@@ -11,8 +11,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "customer")
-public class CustomerEntity extends AuditEntity{
+@Table (name = "user")
+public class UserEntity extends AuditEntity{
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
