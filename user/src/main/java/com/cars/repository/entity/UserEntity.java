@@ -11,7 +11,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "user")
+@Table (name = "user_")
 public class UserEntity extends AuditEntity{
     @Id
     @GeneratedValue(generator = "uuid")
