@@ -1,10 +1,16 @@
 server:
   port: 8081
+auditor:
+  user: "NY-dev"
+
+#jasypt:
+#  encryptor:
+#    password: { $JASYPT_ENCRYPTOR_PASSWORD: }
+
 
 spring:
   application:
-    name: customer
-
+    name: user
   jpa:
     properties:
       hibernate:
@@ -13,21 +19,13 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-      #          hbm2ddl: create
-    #      generate-ddl: true
   datasource:
-#    initialization-mode: always
-#    platform: postgresql
     initialize: true
-#    schema: dealershipdb
-    username: postgres
-    password: 1234
+    username: ENC(7Kba8/Aec0xYe3zart1h8hkyRZzUc66kZOZC945asu1XSSwrwn3c4SZpNLwZ2NGhRcwXElomlvdImL7XbG9ANg==)
+    password: ENC(o731Rsah1Liw1u6CUEYwgc/0iNBMxlcR06/v4JgfGwaJRIYGrS+CkHMe8gEdJp6vkOWU8V0XrHuzebxpi1SGEQ==)
     url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.databaseName}
     dockerContainerName: postgresqldb
     host: 172.17.0.2
     localhost: localhost
     port: 5432
     databaseName: dealershipdb
-
-  auditor:
-    user: "NY-dev"
