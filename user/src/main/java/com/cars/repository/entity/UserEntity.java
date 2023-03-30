@@ -25,4 +25,8 @@ public class UserEntity extends AuditEntity{
     String lastName;
     @Column(length=50, nullable=false)
     String password;
+    @OneToOne(/*cascade = CascadeType.ALL*/)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    RoleEntity role;
+//  Sa
 }
