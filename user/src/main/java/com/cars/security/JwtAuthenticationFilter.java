@@ -2,7 +2,7 @@ package com.cars.security;
 
 import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.apachecommons.CommonsLog;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    JwtServer jwtServer;
+    JwtService jwtServer;
 
     @Override
     protected void doFilterInternal(
@@ -34,7 +34,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         jwtoken = authHeader.substring(7);
-        userEmail = jwtServer.extractuserEmail(jwtoken);
+        userEmail = jwtServer.extractUserEmail(jwtoken);
+        if(userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null){
+
+        }
+
 
 
 

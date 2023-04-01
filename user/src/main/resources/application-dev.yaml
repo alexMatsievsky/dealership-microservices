@@ -2,7 +2,7 @@ server:
   port: 8081
 auditor:
   user: "NY-dev"
-
+key: "2B4D6251655468566D597133743677397A24432646294A404E635266556A586E"
 #jasypt:
 #  encryptor:
 #    password: { $JASYPT_ENCRYPTOR_PASSWORD: }
