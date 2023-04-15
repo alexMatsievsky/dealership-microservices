@@ -1,7 +1,7 @@
 package com.cars.controller;
 
 import com.cars.dto.UserDTO;
-import com.cars.service.CustomerService;
+import com.cars.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -15,17 +15,17 @@ import java.util.List;
 @AllArgsConstructor
 public class UserController {
 
-    public final CustomerService customerService;
+    public final UserService userService;
 
-    @PostMapping("/create")
-    public UserDTO createCustomer (@RequestBody UserRegistrationRequest userRegistrationRequest){
-        return customerService.createCustomer(userRegistrationRequest);
-    }
+//    @PostMapping("/create")
+//    public UserDTO createCustomer (@RequestBody UserDTO userDTO){
+//        return userService.createCustomer(userDTO);
+//    }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<UserDTO>> getListCustomer (){
-        return customerService.listCustomer();
-    }
+//    @GetMapping("/list")
+//    public ResponseEntity<List<UserDTO>> getListCustomer (){
+//        return userService.listCustomer();
+//    }
 
 
 

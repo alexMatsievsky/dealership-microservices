@@ -12,6 +12,8 @@ public interface UserRepository extends JpaRepository<UserEntity, UUID> {
 //    void insertMyEntity(@Param("name") String name, @Param("age") int age);
 //    @Query("INSERT INTO MyEntity (name, age) VALUES (:name, :age)")
 //public Optional<CustomerEntity> saveCustomer(CustomerEntity customerEntity);
-    @Query("SELECT u from User u WHERE u.email = ?1" )
+//    @Query("SELECT u from User u WHERE u.email = ?1" )
+//    Optional<UserEntity> findByEmail(String email);
+    @Query("SELECT u from UserEntity u WHERE u.email = ?1" )
     Optional<UserEntity> findByEmail(String email);
 }

@@ -1,15 +1,15 @@
-package com.cars.dto;
+package com.cars.controller.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-
-import java.util.UUID;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
-public class UserDTO {
+@NoArgsConstructor
+public class RegisterRequest {
 
     private String firstName;
     private String lastName;

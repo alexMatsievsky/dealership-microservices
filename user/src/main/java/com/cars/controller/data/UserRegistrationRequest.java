@@ -1,4 +1,4 @@
-package com.cars.controller;
+package com.cars.controller.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
